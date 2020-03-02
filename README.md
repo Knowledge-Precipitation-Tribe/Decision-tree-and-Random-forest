@@ -2,7 +2,19 @@
 Decision-tree-and-Random-forest
 
 
+
+其实bagging和boosting可以形象的比喻成高中生活，高中做的模拟卷呢就是训练数据，考试的那套卷子呢就是测试数据，我们就用高中生活来解释bagging与boosting。
+
+## bagging
+
+假如说有老三，大个，胖子三个人都坐在教室的最后一排，这三个人学习都在中游，这一天呢老师发了一套数学的模拟卷，他们三个人也就按照这个模拟卷自己慢慢学习，看看答案最后也都学完了。这个周末学校就举行了考试，恰巧老三，大个，胖子三个人坐在一起，面对着这个考试卷子，他们三个人呢因为做模拟题的时候关注的题型不一样，这张考试卷子上有的会有的不会，这三个人就偷偷交流起来了，恰巧坐在他们前面的班花翠兰也有不会的，他们三个就把自己学过的确认的答案都告诉了翠花，按照他们三个人提示的内容，翠花顺利的完成了自己的试卷，最终在这次考试中取得了很好的成绩。
+
+## boosting
+
+还是老三，大个，胖子他们三个，今天呢老师又发了一套数学卷，上次考试大个和胖子考的都不怎么好，就没有心情做了，老三考的还行，他就先开始做这套模拟卷，好不容易做完了一看旁边的大个就跟他说：“你别干挺着啊，快做卷子，我做完了，我先把我做错的教你”，之后呢大个就在老三做完的基础上继续做这套卷子，大个做完又去教胖子，因为已经有前面老三和大个的基础了，所以这套模拟卷胖子做的相当不错。
+
 ## 参考文献
+
 [1] Yeh James: [決策樹(Decision Tree)以及隨機森林(Random Forest)介紹](https://medium.com/jameslearningnote/%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90-%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E7%AC%AC3-5%E8%AC%9B-%E6%B1%BA%E7%AD%96%E6%A8%B9-decision-tree-%E4%BB%A5%E5%8F%8A%E9%9A%A8%E6%A9%9F%E6%A3%AE%E6%9E%97-random-forest-%E4%BB%8B%E7%B4%B9-7079b0ddfbda)
 
 [2] Madhu Sanjeevi ( Mady ): [Decision Trees Algorithms](https://medium.com/deep-math-machine-learning-ai/chapter-4-decision-trees-algorithms-b93975f7a1f1)
