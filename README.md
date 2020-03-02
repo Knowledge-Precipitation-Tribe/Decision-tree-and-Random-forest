@@ -27,7 +27,7 @@ Decision-tree-and-Random-forest
 
 [12] [最常用的决策树算法！Random Forest、Adaboost、GBDT 算法](https://mp.weixin.qq.com/s/Nl_-PdF0nHBq8yGp6AdI-Q)
 
-[13] Yeh James: [Kaggle機器學習競賽神器XGBoost介紹]([https://medium.com/jameslearningnote/%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90-%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E7%AC%AC5-2%E8%AC%9B-kaggle%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E7%AB%B6%E8%B3%BD%E7%A5%9E%E5%99%A8xgboost%E4%BB%8B%E7%B4%B9-1c8f55cffcc](https://medium.com/jameslearningnote/資料分析-機器學習-第5-2講-kaggle機器學習競賽神器xgboost介紹-1c8f55cffcc))
+[13] Yeh James: [Kaggle機器學習競賽神器XGBoost介紹](https://medium.com/jameslearningnote/資料分析-機器學習-第5-2講-kaggle機器學習競賽神器xgboost介紹-1c8f55cffcc)
 
 [14] Alvira Swalin: [CatBoost vs. Light GBM vs. XGBoost](https://towardsdatascience.com/catboost-vs-light-gbm-vs-xgboost-5f93620723db)
 
