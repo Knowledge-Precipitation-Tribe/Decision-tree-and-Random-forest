@@ -5,6 +5,7 @@
 
 - <a href = "#decision-tree">1. Decision Tree</a>
   - <a href = "#entropy">1.1 Entropy</a>
+  - <a href = "#信息增益">信息增益</a>
 - <a href = "#random-forest">2. Random Forest</a>
 - <a href = "#bagging">3. Bagging</a>
 - <a href = "#Boosting">4. Boosting</a>
@@ -55,19 +56,25 @@
 $$
 H(X)=H\left(p_{1}, \ldots, p_{n}\right)=-\sum_{i=1}^{n} p_{i} \log _{2} p_{i}
 $$
-其中$p_{i}$就是第$i$个事件发生的概率，也可以看作在整个集合中第$i$类样本所占的比例。规定若$p_{i}=0$则$p_{i} \log _{2} p_{i}=0$。当我们计算出的**结果越小**，代表当前这个**数据越纯**，也就是**不确定度越低**。
+其中$p_{i}$就是第$i$个事件发生的概率，也可以看作在整个集合中第$i$类样本所占的比例。规定若$p_{i}=0$则$p_{i} \log _{2} p_{i}=0$。计算出的信息熵最小值为0，最大值为$\log _{2}\mathcal{n}$，当我们计算出的**结果越小**，代表当前这个**数据越纯**，也就是**不确定度越低**。
 
 我们在用一个具体的例子来解释信息熵是如何计算的：
 
 ![watermelon](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/images/watermelon.png)
 
-在这个例子中我们数据集共有17条数据，其中包含好瓜和坏瓜两个类别，其中好瓜/正例占$p_{1}=\frac{8}{17}$，坏瓜/反例占$p_{2}=\frac{9}{17}$。
+在这个例子中我们数据集共有17条数据，其中包含好瓜和坏瓜两个类别，其中好瓜/正例占$p_{1}=\frac{8}{17}$，坏瓜/负例占$p_{2}=\frac{9}{17}$。
 
 那么现在这个集合的信息熵为：
 $$
 H(X)=-\sum_{i=1}^{2} p_{i} \log _{2} p_{i}= -\left(\frac{8}{17} \log _{2}^{\frac{8}{17}}+\frac{9}{17} \log _{2}^{\frac{9}{17}}\right)=0.998
 $$
-损失
+可以看到我们当前的这个数据集合计算出来的值很大，也就代表当前的数据还是很混乱的，因为正负两个样本基本上各占一半。
+
+---
+
+了解完信息熵，就引出了另一个概念信息增益。
+
+### [信息增益](#content)
 
 
 
