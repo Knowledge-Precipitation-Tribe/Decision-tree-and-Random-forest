@@ -1,7 +1,7 @@
 # Decision-tree-and-Random-forest
 决策树，随机森林，bagging与boosting等。
 
-**若数学公式显示出现问题大家也可通过此链接查看：[Decision-tree-and-Random-forest](https://nbviewer.jupyter.org/github/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/jupyter notebook/Decision Tree.ipynb)**
+**若数学公式显示出现问题大家也可通过此链接查看：[Decision-tree-and-Random-forest](https://nbviewer.jupyter.org/github/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/jupyter%20notebook/Decision%20Tree.ipynb)**
 
 ## Content
 
