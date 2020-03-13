@@ -154,9 +154,25 @@ $$
 
 基尼系数
 
-### [ID3](#content)
+---
 
 接下来我们就看一下在决策树中是如何应用上面的公式的
+
+### [ID3](#content)
+
+我们根据刚才的信息增益来计算一下按照其他属性分割得到的信息增益
+$$
+\begin{array}{ll}
+\operatorname{Gain}(D, 根蒂)=0.143 & \operatorname{Gain}(D, 敲声)=0.141 \\
+\operatorname{Gain}(D, 纹理)=0.381 & \operatorname{Gain}(D, 脐部)=0.289 \\
+\operatorname{Gain}(D, 触感)=0.006 & \operatorname{Gain}(D, 色泽)=0.109
+\end{array}
+$$
+显然根据纹理进行分割是信息增益最大的，故首先按照纹理来划分样本
+
+![ID3](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/images/ID3.png)
+
+之后按照这个规则继续分割，直到达到了停止条件则决策树完成创建。
 
 ### [Random Forest](#content)
 
