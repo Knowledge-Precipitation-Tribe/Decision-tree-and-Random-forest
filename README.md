@@ -198,9 +198,13 @@ $$
 $$
 显然根据纹理进行分割是信息增益最大的，故首先按照纹理来划分样本
 
-![ID3](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/images/ID3.png)
+![ID3](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/decisionTree/tree.png)
 
-之后按照这个规则继续分割，直到达到了停止条件则决策树完成创建。信息增益存在一个问题，那就是如果按照这种方法进行计算的话，那假如某个属性具有好多个取值，甚至是把编号作为属性了，按照这种情况计算就会导致决策树创建之后效果并不好，所以才引入了信息增益率也就是C4.5。
+之后按照这个规则继续分割，直到达到了停止条件则决策树完成创建。
+
+![ID3](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/decisionTree/tree.png)
+
+信息增益存在一个问题，那就是如果按照这种方法进行计算的话，那假如某个属性具有好多个取值，甚至是把编号作为属性了，按照这种情况计算就会导致决策树创建之后效果并不好，所以才引入了信息增益率也就是C4.5。
 
 ---
 
