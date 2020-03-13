@@ -4,6 +4,7 @@
 ## Content
 
 - <a href = "#decision-tree">1. Decision Tree</a>
+  - <a href = "#entropy">1.1 Entropy</a>
 - <a href = "#random-forest">2. Random Forest</a>
 - <a href = "#bagging">3. Bagging</a>
 - <a href = "#Boosting">4. Boosting</a>
@@ -42,9 +43,31 @@
 
 在介绍这几种决策树之前我们先引入一个**信息熵**的概念：
 
-所谓的信息熵就是度量一个样本集合"纯度"的指标，如何理解呢
+### [entropy](#content)
 
+所谓的信息熵就是度量一个样本集合"纯度/不确定度"的指标，如何理解呢,我们来举个例子：
 
+假设你在医生办公室的候诊室里和三个病人谈话。 他们三个人都刚刚完成了一项医学测试，经过一些处理，产生了两种可能的结果之一: 疾病要么存在，要么不存在。 他们已经提前研究了特定风险概率，现在急于找出结果，病人 a 知道，根据统计，他有95% 的可能性患有这种疾病。 对于病人 b，被诊断为患病的概率是30% 。 相比之下，患者 c 的概率是50 %。
+
+现在我们想集中讨论一个简单的问题。 在其他条件相同的情况下，这三个病人中哪一个面临最大程度的不确定性？
+
+答案很清楚: 病人 c 经历了"最多的不确定性"。 在这种情况下，他所经历的是最大程度的不确定性: 就像抛硬币一样。但是我们如何精确的来计算这种不确定度呢？就有了下面这个公式：
+$$
+H(X)=H\left(p_{1}, \ldots, p_{n}\right)=-\sum_{i=1}^{n} p_{i} \log _{2} p_{i}
+$$
+其中$p_{i}$就是第$i$个事件发生的概率，也可以看作在整个集合中第$i$类样本所占的比例。规定若$p_{i}=0$则$p_{i} \log _{2} p_{i}=0$。当我们计算出的**结果越小**，代表当前这个**数据越纯**，也就是**不确定度越低**。
+
+我们在用一个具体的例子来解释信息熵是如何计算的：
+
+![watermelon](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/images/watermelon.png)
+
+在这个例子中我们数据集共有17条数据，其中包含好瓜和坏瓜两个类别，其中好瓜/正例占$p_{1}=\frac{8}{17}$，坏瓜/反例占$p_{2}=\frac{9}{17}$。
+
+那么现在这个集合的信息熵为：
+$$
+H(X)=-\sum_{i=1}^{2} p_{i} \log _{2} p_{i}= -\left(\frac{8}{17} \log _{2}^{\frac{8}{17}}+\frac{9}{17} \log _{2}^{\frac{9}{17}}\right)=0.998
+$$
+损失
 
 
 
@@ -95,6 +118,10 @@
 [16] Pushkar Mandot: [What is LightGBM, How to implement it? How to fine tune the parameters?](https://medium.com/@pushkarmandot/https-medium-com-pushkarmandot-what-is-lightgbm-how-to-implement-it-how-to-fine-tune-the-parameters-60347819b7fc)
 
 [17] 陈旸: [极客时间：决策树](https://time.geekbang.org/column/article/78273)
+
+[18] [Entropy is a measure of uncertainty](https://towardsdatascience.com/entropy-is-a-measure-of-uncertainty-e2c000301c2c)
+
+[19] 周志华: [机器学习](https://item.jd.com/10244685726.html)
 
 
 
