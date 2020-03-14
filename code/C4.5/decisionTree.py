@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-#
 '''
-# Name:         decisionTree
+# Name:         C4.5
 # Description:  
 # Author:       super
 # Date:         2020/3/13
