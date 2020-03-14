@@ -27,19 +27,21 @@ def load_data(path):
     return x, y
 
 def build_model():
-    clf = DecisionTreeClassifier(criterion='gini', max_depth=4)
+    clf = DecisionTreeClassifier(criterion='gini', max_depth=1)
     return clf
 
 if __name__ == '__main__':
     x, y = load_data("../C4.5/data.csv")
     # print(x)
     # print(y)
+    # print(x.values[:,0])
     clf = build_model()
-    clf.fit(x.values, y.values)
+    # clf.fit(x.values, y.values)
+    clf.fit(np.array(x.values[:,0]).reshape(-1,1), y.values)
     print(clf)
 
     dot_data = export_graphviz(clf,
                                out_file="tree.dot",
-                               feature_names=x.columns,
+                               #feature_names=x.columns,
                                filled=True,
                                rounded=True)

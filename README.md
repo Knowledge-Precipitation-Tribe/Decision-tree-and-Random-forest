@@ -106,9 +106,9 @@ $$
 
 $A^{v}$代表所有样本在属性$a$上取值为$a^{v}$的样本集合。
 
-那么以属性a对数据集D进行划分，所得到的信息增益为：
+那么以属性A对数据集D进行划分，所得到的信息增益为：
 $$
-\operatorname{Gain}(D, a)=\operatorname{H}(D)-\underbrace{\sum_{v=1}^{V} \frac{\left|A^{v}\right|}{|D|} \operatorname{H}\left(A^{v}\right)}_{按照属性a划分之后的信息熵的和}
+\operatorname{Gain}(D, A)=\operatorname{H}(D)-\underbrace{\sum_{v=1}^{V} \frac{\left|A^{v}\right|}{|D|} \operatorname{H}\left(A^{v}\right)}_{按照属性a划分之后的信息熵的和}
 $$
 其中代表按照属性a划分之前的信息熵，$\frac{\left|A^{v}\right|}{|D|}$代表属性a取值为v时在所有样本中所占的权重，样本越多代表当前属性的这个取值越重要。
 
@@ -153,22 +153,22 @@ $$
 
 信息增益率：
 $$
-\text { Gain_ratio }(D, a)=\frac{\operatorname{Gain}(D, a)}{\operatorname{IV}(a)}
+\text { Gain_ratio }(D, A)=\frac{\operatorname{Gain}(D, A)}{\operatorname{IV}(A)}
 $$
 其中
 $$
-\operatorname{IV}(a)=-\sum_{v=1}^{V} \frac{\left|A^{v}\right|}{|D|} \log _{2} \frac{\left|A^{v}\right|}{|D|}
+\operatorname{IV}(A)=-\sum_{v=1}^{V} \frac{\left|A^{v}\right|}{|D|} \log _{2} \frac{\left|A^{v}\right|}{|D|}
 $$
-属性a的可能取值越多即V越多，则IV(a)的值越大。
+属性A的可能取值越多即V越多，则IV(A)的值越大。
 
-我们仍以西瓜数据集为例，计算一下信息增益率，首先我们来计算一下IV(a)：
+我们仍以西瓜数据集为例，计算一下信息增益率，首先我们来计算一下IV(A)：
 $$
-\operatorname{IV}(a)=-\left(\frac{6}{17} \log _{2} \frac{6}{17}+\frac{6}{17} \log _{2} \frac{6}{17}+ \frac{5}{17}\log _{2} \frac{5}{17}\right)=2.028
+\operatorname{IV}(A)=-\left(\frac{6}{17} \log _{2} \frac{6}{17}+\frac{6}{17} \log _{2} \frac{6}{17}+ \frac{5}{17}\log _{2} \frac{5}{17}\right)=2.028
 $$
 接下来计算一下信息增益率：
 $$
 \begin{aligned}
-\text { Gain_ratio }(D, a) &=\frac{\operatorname{Gain}(D, a)}{\operatorname{IV}(a)} \\
+\text { Gain_ratio }(D, A) &=\frac{\operatorname{Gain}(D, A)}{\operatorname{IV}(A)} \\
 &=\frac{0.109}{2.028} \\
 &=0.054
 \end{aligned}
@@ -180,7 +180,68 @@ $$
 
 与之前那两个基于熵的不同，基尼系数采用新的算法来计算数据的不确定度/纯度，基尼系数越小，数据的纯度越高，不确定度越低。我们来看一下基尼系数到底长什么样。
 
+在一个分类问题中，假设有v个类别，第v个类别的概率为，则基尼系数为：
 
+
+$$
+\operatorname{Gini}(p)=\sum_{v=1}^{V} p_{v}\left(1-p_{v}\right)=1-\sum_{v=1}^{V} p_{v}^{2}
+$$
+
+
+对于给定样本D，假设其中有k个类别，切第k个类别的数量为，则样本D的基尼系数为：
+
+
+$$
+\operatorname{Gini}(D)=1-\sum_{v=1}^{V}\left(\frac{\left|A_{v}\right|}{|D|}\right)^{2}
+$$
+
+
+具体来说，我们假设某个离散属性的取值为：
+
+$$
+\left\{a^{1}, a^{2}, a^{3}, \ldots a^{V}\right\}
+$$
+
+
+$A^{v}$代表所有样本在属性$a$上取值为$a^{v}$的样本集合。
+
+那么以属性A对数据集D进行划分，所得到的基尼系数为：
+
+
+$$
+\operatorname{Gini}(D, A)=\sum_{v=1}^{V} \frac{\left|A^{v}\right|}{|D|} \mathrm{Gini}\left(A^{v}\right)
+$$
+
+
+我们还是用西瓜数据集为例，计算一下基尼系数，假设我们以色泽属性进行分割，那么就对应着三个数据子集：
+
+- $A^{1}$代表青绿色，对应的数据编号为$ \{1,4,6,10,13,17\} $，共有6个样本，其中正例3个，负例3个。
+- $A^{2}$代表乌黑色，对应的数据编号为$ \{2,3,7,8,9,15\}$ ，共有6个样本，其中正例4个，负例2个。
+- $A^{3}$代表浅白色，对应的数据编号为$ \{5,11,12,14,16\}$，共有5个样本，其中正例1个，负例4个。
+
+*正例仍代表好瓜与负例仍代表坏瓜。*
+
+则按照色泽进行划分之后的到的基尼系数分别为：
+
+
+$$
+\begin{aligned}
+&\mathrm{Gini}\left(A^{1}\right)=1-\left((\frac{3}{6})^2 + (\frac{3}{6})^2 \right)=0.5 \\
+&\mathrm{Gini}\left(A^{2}\right)=1-\left((\frac{4}{6})^2 + (\frac{2}{6})^2 \right)=0.444\\
+&\mathrm{Gini}\left(A^{3}\right)=1-\left((\frac{1}{5})^2 + (\frac{4}{5})^2 \right)=0.32
+\end{aligned}
+$$
+则根据属性色泽划分之后的基尼系数为：
+
+
+$$
+\begin{aligned}
+\text { Gini }(D, A) &= \sum_{v=1}^{V} \frac{\left|A^{v}\right|}{|D|} \mathrm{Gini}\left(A^{v}\right) \\
+&=\frac{6}{17}*0.5 + \frac{6}{17}*0.444 + \frac{5}{17}*0.32 \\
+&=0.176 + 0.157 + 0.094 \\
+&=0.427
+\end{aligned}
+$$
 
 ---
 
@@ -188,7 +249,7 @@ $$
 
 ### [ID3](#content)
 
-我们根据刚才的信息增益来计算一下按照其他属性分割得到的信息增益
+我们根据刚才的信息增益公式来计算一下按照其他属性分割得到的信息增益
 $$
 \begin{array}{ll}
 \operatorname{Gain}(D, 根蒂)=0.143 & \operatorname{Gain}(D, 敲声)=0.141 \\
@@ -198,11 +259,11 @@ $$
 $$
 显然根据纹理进行分割是信息增益最大的，故首先按照纹理来划分样本
 
-![ID3](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/decisionTree/tree1.png)
+![ID3](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/C4.5/tree1.png)
 
 之后按照这个规则继续分割，直到达到了停止条件则决策树完成创建。
 
-![ID3](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/decisionTree/tree2.png)
+![ID3](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/C4.5/tree2.png)
 
 ID3算法不足：
 
@@ -237,7 +298,18 @@ ID3算法不足：
 
 ### [CART](#content)
 
-CART
+我们上面介绍完了基尼系数的计算，但是CART决策树在创建过程中有一些细节值得注意：
+
+- 与上面的C4.5一样，CART决策树叶具有处理连续值的能力，只不过在处理连续值的过程中，它获取完分割点后采用的是基尼系数进行运算
+- CART决策树是一个二叉树，不同于我们在基尼系数中的计算将色泽分为三类，分别算完基尼系数求和，CART决策树在计算过程中是这样的。他会将A分为三组：{A1}和{A2,A3}，{A2}和{A1,A3}，{A3}和{A1,A2}，然后分别计算这三组怎样分基尼系数最小，选取最小的那一个组合来建立决策树。
+
+我们可以先看一下最开始的情况他是按照纹理来进行切分
+
+![CART](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/CART/tree2.png)
+
+之后再通过同样的算法建立起整个决策树
+
+![CART](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/CART/tree1.png)
 
 ---
 
