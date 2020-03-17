@@ -352,13 +352,17 @@ ID3算法不足：
 
 我们在Iris鸢尾花卉数据集上实现分类效果，对于数据集的特征情况和可视化结果请看：[Dive-into-matplotlib](https://github.com/Knowledge-Precipitation-Tribe/Dive-into-matplotlib)。我们这里使用max_depth=3的决策树，准确率可达：97.78%。最终生成的决策树如下：
 
-![iris_tree]()
+![iris_tree](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/irisClassification/iris_tree.png)
 
+我们也可以看一下决策树随深度的变化，预测的效果如何
 
+![depthAndAcc](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/irisClassification/depthAndAcc.png)
 
+### [决策树回归](#content)
 
+决策树回归这里为了方便可视化，没有涉及复杂的数据，用的是随机生成的数据，我们根据树不同的深度可视化了回归树的预测结果
 
-
+![depthAndAcc](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/decisionTreeRegressor/decisionTreeRegressor.png)
 
 ---
 
