@@ -364,6 +364,10 @@ ID3算法不足：
 
 ![depthAndAcc](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/decisionTreeRegressor/DecisionTreeRegressor.png)
 
+
+
+**更多实战内容请看：[[The-road-of-Competition](https://github.com/Knowledge-Precipitation-Tribe/The-road-of-Competition)](https://github.com/Knowledge-Precipitation-Tribe/The-road-of-Competition)**
+
 ---
 
 ### [Random Forest](#content)
