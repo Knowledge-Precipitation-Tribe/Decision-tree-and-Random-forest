@@ -18,6 +18,9 @@
   - <a href = "#C4.5">1.6 C4.5</a>
   - <a href = "#CART">1.7 CART</a>
   - <a href = "#剪枝">1.8 剪枝</a>
+  - <a href = "#实战">1.9 实战</a>
+    - <a href = "#决策树分类">1.9.1 决策树分类</a>
+    - <a href = "#决策树回归">1.9.1 决策树回归</a>
 - <a href = "#random-forest">2. Random Forest</a>
 - <a href = "#bagging">3. Bagging</a>
 - <a href = "#Boosting">4. Boosting</a>
@@ -30,7 +33,6 @@
 在介绍决策树之前我们先看看决策树长什么样。我们这个决策树是判定一个人是否要去相亲。
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/images/decisionTree.png" width = "300" height = "295" alt="axis" align=center /></div>
-
 
 学过软件工程的朋友应该接触过判定树，判定树也称为决策树，只不过呢在机器学习的决策树中如何向下分割节点要由更复杂的计算公式决定。
 
@@ -341,6 +343,22 @@ ID3算法不足：
 **后剪枝**
 
 后剪枝就是我们已经有一个完整的决策树了，我们可以将哪些节点进行剪枝呢？
+
+---
+
+### [实战](#content)
+
+### [决策树分类](#content)
+
+我们在Iris鸢尾花卉数据集上实现分类效果，对于数据集的特征情况和可视化结果请看：[Dive-into-matplotlib](https://github.com/Knowledge-Precipitation-Tribe/Dive-into-matplotlib)。我们这里使用max_depth=3的决策树，准确率可达：97.78%。最终生成的决策树如下：
+
+![iris_tree]()
+
+
+
+
+
+
 
 ---
 

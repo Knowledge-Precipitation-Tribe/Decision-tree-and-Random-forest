@@ -25,8 +25,6 @@ def iris_type(s):
 def load_data(path):
     data = np.loadtxt(path, dtype=float, delimiter=',', converters={4: iris_type})
     x, y = np.split(data, (4,), axis=1)
-    # 为了可视化，仅使用前两列特征
-    x = x[:, :2]
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=24)
     return x_train, x_test, y_train, y_test
 
