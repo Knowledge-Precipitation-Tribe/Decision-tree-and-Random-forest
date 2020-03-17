@@ -30,6 +30,25 @@ def load_data(path):
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=24)
     return x_train, x_test, y_train, y_test
 
+def show_depth_and_acc(x_train, y_train, x_test, y_test):
+    # 看一下树不同深度模型的拟合效果
+    depth = np.arange(1, 15)
+    acc_list = []
+    for d in depth:
+        clf = DecisionTreeClassifier(criterion="entropy", max_depth=d)
+        clf.fit(x_train, y_train)
+        accuracy = clf.score(x_test, y_test)
+        acc_list.append(accuracy)
+        print(d, ' 准确度: %.2f%%' % (100 * accuracy))
+    plt.figure(facecolor='w')
+    plt.plot(depth, acc_list, 'ro--', lw=2)
+    plt.xlabel('depth of decision tree')
+    plt.ylabel('acc')
+    plt.title('depth and acc')
+    plt.grid(True)
+    plt.savefig('depthAndAcc.png')
+    plt.show()
+
 if __name__ == "__main__":
     path = 'iris.data'
     x_train, x_test, y_train, y_test = load_data(path)
@@ -51,20 +70,4 @@ if __name__ == "__main__":
     f = open('./iris_tree.dot', 'w')
     tree.export_graphviz(model.get_params('DTC')['DTC'], out_file=f)
 
-    #看一下树不同深度模型的拟合效果
-    depth = np.arange(1,15)
-    acc_list = []
-    for d in depth:
-        clf = DecisionTreeClassifier(criterion="entropy", max_depth=d)
-        clf.fit(x_train, y_train)
-        accuracy = clf.score(x_test, y_test)
-        acc_list.append(accuracy)
-        print(d, ' 准确度: %.2f%%' % (100 * accuracy))
-    plt.figure(facecolor='w')
-    plt.plot(depth, acc_list, 'ro--', lw=2)
-    plt.xlabel('depth of decision tree')
-    plt.ylabel('acc')
-    plt.title('depth and acc')
-    plt.grid(True)
-    plt.savefig('depthAndAcc.png')
-    plt.show()
+    show_depth_and_acc(x_train, y_train, x_test, y_test)
