@@ -362,7 +362,7 @@ ID3算法不足：
 
 决策树回归这里为了方便可视化，没有涉及复杂的数据，用的是随机生成的数据，我们根据树不同的深度可视化了回归树的预测结果
 
-![depthAndAcc](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/decisionTreeRegressor/decisionTreeRegressor.png)
+![depthAndAcc](https://github.com/Knowledge-Precipitation-Tribe/Decision-tree-and-Random-forest/blob/master/code/decisionTreeRegressor/DecisionTreeRegressor.png)
 
 ---
 
