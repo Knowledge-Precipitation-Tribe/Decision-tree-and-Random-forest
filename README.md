@@ -1,6 +1,8 @@
 # Decision-tree-and-Random-forest
 决策树，随机森林，bagging与boosting等。
 
+**当前版本已不维护，请通过[Gitbook在线浏览](https://subraniumplus.gitbook.io/decision-tree-and-random-forest/)**
+
 ## 阅读指南
 
 1. 在线观看请使用Chrome浏览器，并安装插件：[MathJax Plugin for Github(需科学上网)](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)， 插件[Github地址](https://github.com/orsharir/github-mathjax)
